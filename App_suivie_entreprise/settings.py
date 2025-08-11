@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-vst&n8gz64e5+lzbg0%g85u1(b(=cf@d#10myk)1c*$j^*hl7$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -129,6 +129,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_URL = "/assets/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "assets/")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

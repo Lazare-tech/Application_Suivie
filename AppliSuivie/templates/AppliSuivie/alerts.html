@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% block title %}Alerts et notifications{% endblock title %}
+{% block content %}
+<!-- Header -->
+                <div class="page-header">
+                    <div class="container-fluid px-4">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h1 class="h2 mb-1">
+                                    <i class="fas fa-bell me-2"></i>
+                                    Alertes & Notifications
+                                </h1>
+                                <p class="text-white-50 mb-0">Centre de gestion des alertes critiques</p>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-success me-2">
+                                    <i class="fas fa-plus me-2"></i>
+                                    Configurer Alerte
+                                </button>
+                                <button class="btn btn-outline-light">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    Marquer tout lu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alerts Content -->
+                <div class="container-fluid px-4">
+                    <!-- Alert Statistics -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card border-danger">
+                                <div class="card-body text-center p-4">
+                                    <i class="fas fa-exclamation-triangle text-danger fa-2x mb-3"></i>
+                                    <h3 class="text-danger fw-bold mb-1">1</h3>
+                                    <p class="text-muted small mb-0">Alertes Critiques</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card border-warning">
+                                <div class="card-body text-center p-4">
+                                    <i class="fas fa-exclamation-circle text-warning fa-2x mb-3"></i>
+                                    <h3 class="text-warning fw-bold mb-1">2</h3>
+                                    <p class="text-muted small mb-0">Alertes Modérées</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card border-info">
+                                <div class="card-body text-center p-4">
+                                    <i class="fas fa-info-circle text-info fa-2x mb-3"></i>
+                                    <h3 class="text-info fw-bold mb-1">0</h3>
+                                    <p class="text-muted small mb-0">Notifications</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card border-success">
+                                <div class="card-body text-center p-4">
+                                    <i class="fas fa-check-circle text-success fa-2x mb-3"></i>
+                                    <h3 class="text-success fw-bold mb-1">45</h3>
+                                    <p class="text-muted small mb-0">Résolues Aujourd'hui</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alert Filters -->
+                    <div class="card mb-4 border-0 shadow">
+                        <div class="card-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                    <select class="form-select">
+                                        <option>Toutes les alertes</option>
+                                        <option>Critiques uniquement</option>
+                                        <option>Modérées uniquement</option>
+                                        <option>Non lues</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-select">
+                                        <option>Tous les types</option>
+                                        <option>Solde critique</option>
+                                        <option>Paiement en retard</option>
+                                        <option>Prévision négative</option>
+                                        <option>Anomalie détectée</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Rechercher dans les alertes...">
+                                        <button class="btn btn-outline-secondary">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary w-100">
+                                        <i class="fas fa-filter me-2"></i>
+                                        Filtrer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Alerts -->
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-white border-0">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-bell me-2"></i>
+                                Alertes Actives (3 alertes)
+                            </h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <!-- Critical Alert -->
+                            <div class="alert-item alert-critical p-4 border-bottom">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-exclamation-triangle text-danger fa-lg me-3 mt-1"></i>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-semibold mb-1">Solde critique - Compte Principal</h6>
+                                            <p class="text-muted small mb-2">Le solde est descendu sous le seuil critique de 50,000€</p>
+                                            <div class="d-flex align-items-center small text-muted">
+                                                <span class="me-4">
+                                                    <i class="fas fa-clock me-1"></i>
+                                                    Il y a 2h
+                                                </span>
+                                                <span>Compte: PRINCIPAL-001</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 ms-3">
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="fas fa-check-circle me-1"></i>
+                                            Traiter
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Warning Alert 1 -->
+                            <div class="alert-item alert-warning p-4 border-bottom">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-exclamation-circle text-warning fa-lg me-3 mt-1"></i>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-semibold mb-1">Paiement en retard</h6>
+                                            <p class="text-muted small mb-2">Facture #FAC-2024-0156 en retard de 15 jours</p>
+                                            <div class="d-flex align-items-center small text-muted">
+                                                <span class="me-4">
+                                                    <i class="fas fa-clock me-1"></i>
+                                                    Il y a 1j
+                                                </span>
+                                                <span>Échéance: 30/11/2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 ms-3">
+                                        <button class="btn btn-outline-secondary btn-sm">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                        <button class="btn btn-outline-secondary btn-sm">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                        <button class="btn btn-warning btn-sm">
+                                            <i class="fas fa-check-circle me-1"></i>
+                                            Relancer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Warning Alert 2 -->
+                            <div class="alert-item alert-warning p-4">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-exclamation-circle text-warning fa-lg me-3 mt-1"></i>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-semibold mb-1">Risque de découvert</h6>
+                                            <p class="text-muted small mb-2">Risque de découvert prévu dans 5 jours</p>
+                                            <div class="d-flex align-items-center small text-muted">
+                                                <span class="me-4">
+                                                    <i class="fas fa-clock me-1"></i>
+                                                    Il y a 3h
+                                                </span>
+                                                <span>Prévision: 20/12/2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 ms-3">
+                                        <button class="btn btn-outline-secondary btn-sm">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </button>
+                                        <button class="btn btn-warning btn-sm">
+                                            <i class="fas fa-check-circle me-1"></i>
+                                            Planifier
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alert History -->
+                    <div class="card border-0 shadow mt-4">
+                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-history me-2"></i>
+                                Historique des Alertes
+                            </h5>
+                            <select class="form-select w-auto">
+                                <option>7 derniers jours</option>
+                                <option>30 derniers jours</option>
+                                <option>3 derniers mois</option>
+                            </select>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Message</th>
+                                            <th>Sévérité</th>
+                                            <th>Date de création</th>
+                                            <th>Date de résolution</th>
+                                            <th>Statut</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <i class="fas fa-sync-alt text-muted me-2"></i>
+                                                Erreur de synchronisation
+                                            </td>
+                                            <td>Échec de synchronisation bancaire - BNP Paribas</td>
+                                            <td>
+                                                <span class="badge bg-warning">Modérée</span>
+                                            </td>
+                                            <td>14/12/2024 08:30</td>
+                                            <td>14/12/2024 09:15</td>
+                                            <td>
+                                                <span class="badge bg-success">Résolue</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fas fa-file-alt text-muted me-2"></i>
+                                                Rapport prêt
+                                            </td>
+                                            <td>Nouveau rapport disponible - Bilan Q4 2024</td>
+                                            <td>
+                                                <span class="badge bg-info">Information</span>
+                                            </td>
+                                            <td>13/12/2024 14:45</td>
+                                            <td>13/12/2024 15:00</td>
+                                            <td>
+                                                <span class="badge bg-success">Résolue</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fas fa-exclamation-triangle text-muted me-2"></i>
+                                                Anomalie détectée
+                                            </td>
+                                            <td>Transaction inhabituelle détectée - Montant élevé</td>
+                                            <td>
+                                                <span class="badge bg-warning">Modérée</span>
+                                            </td>
+                                            <td>12/12/2024 16:20</td>
+                                            <td>12/12/2024 17:10</td>
+                                            <td>
+                                                <span class="badge bg-success">Résolue</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+ {% endblock content %}

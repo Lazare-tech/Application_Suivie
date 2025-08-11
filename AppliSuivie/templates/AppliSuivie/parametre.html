@@ -1,0 +1,649 @@
+{% extends "base.html" %}
+{% block title %}Paramètres - FinanceManager {% endblock title %}
+     
+{% block content %}
+
+                <!-- Header -->
+                <div class="page-header">
+                    <div class="container-fluid px-4">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h1 class="h2 mb-1">
+                                    <i class="fas fa-cog me-2"></i>
+                                    Paramètres
+                                </h1>
+                                <p class="text-white-50 mb-0">Configuration et personnalisation de l'application</p>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-success me-2">
+                                    <i class="fas fa-save me-2"></i>
+                                    Sauvegarder
+                                </button>
+                                <button class="btn btn-outline-light">
+                                    <i class="fas fa-undo me-2"></i>
+                                    Restaurer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <!-- Settings Navigation -->
+                        <div class="col-lg-3 mb-4">
+                            <div class="card border-0 shadow">
+                                <div class="card-body p-0">
+                                    <nav class="nav flex-column settings-nav p-3">
+                                        <a class="nav-link active" href="#accounts-tab" data-bs-toggle="tab">
+                                            <i class="fas fa-building me-3"></i>
+                                            Comptes Bancaires
+                                        </a>
+                                        <a class="nav-link" href="#users-tab" data-bs-toggle="tab">
+                                            <i class="fas fa-users me-3"></i>
+                                            Utilisateurs & Permissions
+                                        </a>
+                                        <a class="nav-link" href="#categories-tab" data-bs-toggle="tab">
+                                            <i class="fas fa-tags me-3"></i>
+                                            Catégories
+                                        </a>
+                                        <a class="nav-link" href="#security-tab" data-bs-toggle="tab">
+                                            <i class="fas fa-shield-alt me-3"></i>
+                                            Sécurité
+                                        </a>
+                                        <a class="nav-link" href="#preferences-tab" data-bs-toggle="tab">
+                                            <i class="fas fa-palette me-3"></i>
+                                            Préférences
+                                        </a>
+                                        <a class="nav-link" href="#backup-tab" data-bs-toggle="tab">
+                                            <i class="fas fa-cloud me-3"></i>
+                                            Sauvegarde
+                                        </a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Settings Content -->
+                        <div class="col-lg-9">
+                            <div class="tab-content">
+                                <!-- Bank Accounts Tab -->
+                                <div class="tab-pane fade show active" id="accounts-tab">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title mb-0">
+                                                <i class="fas fa-building me-2"></i>
+                                                Gestion des Comptes Bancaires
+                                            </h5>
+                                            <button class="btn btn-success">
+                                                <i class="fas fa-plus me-2"></i>
+                                                Ajouter Compte
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Banque</th>
+                                                            <th>Numéro de Compte</th>
+                                                            <th>Solde</th>
+                                                            <th>Dernière Sync</th>
+                                                            <th>Statut</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <i class="fas fa-building text-primary fa-lg me-3"></i>
+                                                                    <div>
+                                                                        <div class="fw-semibold">BNP Paribas</div>
+                                                                        <small class="text-muted">Compte Principal</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>****1234</td>
+                                                            <td class="fw-bold text-success">€ 485,750</td>
+                                                            <td>15/12/2024 14:30</td>
+                                                            <td>
+                                                                <span class="badge bg-success">Actif</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-sync-alt"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-danger">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <i class="fas fa-building text-success fa-lg me-3"></i>
+                                                                    <div>
+                                                                        <div class="fw-semibold">Crédit Agricole</div>
+                                                                        <small class="text-muted">Compte Épargne</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>****5678</td>
+                                                            <td class="fw-bold text-success">€ 125,000</td>
+                                                            <td>15/12/2024 14:30</td>
+                                                            <td>
+                                                                <span class="badge bg-success">Actif</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-sync-alt"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-danger">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <i class="fas fa-building text-warning fa-lg me-3"></i>
+                                                                    <div>
+                                                                        <div class="fw-semibold">Société Générale</div>
+                                                                        <small class="text-muted">Compte Charges</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>****9012</td>
+                                                            <td class="fw-bold text-success">€ 25,000</td>
+                                                            <td>14/12/2024 14:30</td>
+                                                            <td>
+                                                                <span class="badge bg-warning">Attention</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-sync-alt"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-danger">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Users Tab -->
+                                <div class="tab-pane fade" id="users-tab">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title mb-0">
+                                                <i class="fas fa-users me-2"></i>
+                                                Gestion des Utilisateurs
+                                            </h5>
+                                            <button class="btn btn-success">
+                                                <i class="fas fa-user-plus me-2"></i>
+                                                Inviter Utilisateur
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Utilisateur</th>
+                                                            <th>Email</th>
+                                                            <th>Rôle</th>
+                                                            <th>Dernière Connexion</th>
+                                                            <th>Statut</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="bg-danger rounded-circle text-white fw-bold d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                                                        JD
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="fw-semibold">Jean Dupont</div>
+                                                                        <small class="text-muted">Directeur Général</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>jean.dupont@company.com</td>
+                                                            <td>
+                                                                <span class="badge bg-danger">Administrateur</span>
+                                                            </td>
+                                                            <td>15/12/2024 14:30</td>
+                                                            <td>
+                                                                <span class="badge bg-success">En ligne</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-key"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="bg-success rounded-circle text-white fw-bold d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                                                        ML
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="fw-semibold">Marie Laurent</div>
+                                                                        <small class="text-muted">Responsable Financière</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>marie.laurent@company.com</td>
+                                                            <td>
+                                                                <span class="badge bg-primary">Gestionnaire</span>
+                                                            </td>
+                                                            <td>15/12/2024 10:45</td>
+                                                            <td>
+                                                                <span class="badge bg-warning">Absent</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-secondary">
+                                                                        <i class="fas fa-key"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-outline-danger">
+                                                                        <i class="fas fa-user-times"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Categories Tab -->
+                                <div class="tab-pane fade" id="categories-tab">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title mb-0">
+                                                <i class="fas fa-tags me-2"></i>
+                                                Gestion des Catégories
+                                            </h5>
+                                            <button class="btn btn-success">
+                                                <i class="fas fa-plus me-2"></i>
+                                                Nouvelle Catégorie
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6 class="fw-semibold mb-4">Catégories de Revenus</h6>
+                                                    <div class="list-group">
+                                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bg-success rounded me-2" style="width: 16px; height: 16px;"></div>
+                                                                <span>Ventes</span>
+                                                            </div>
+                                                            <div class="btn-group btn-group-sm">
+                                                                <button class="btn btn-outline-secondary">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bg-primary rounded me-2" style="width: 16px; height: 16px;"></div>
+                                                                <span>Services</span>
+                                                            </div>
+                                                            <div class="btn-group btn-group-sm">
+                                                                <button class="btn btn-outline-secondary">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bg-secondary rounded me-2" style="width: 16px; height: 16px;"></div>
+                                                                <span>Produits financiers</span>
+                                                            </div>
+                                                            <div class="btn-group btn-group-sm">
+                                                                <button class="btn btn-outline-secondary">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h6 class="fw-semibold mb-4">Catégories de Dépenses</h6>
+                                                    <div class="list-group">
+                                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bg-warning rounded me-2" style="width: 16px; height: 16px;"></div>
+                                                                <span>Charges fixes</span>
+                                                            </div>
+                                                            <div class="btn-group btn-group-sm">
+                                                                <button class="btn btn-outline-secondary">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bg-info rounded me-2" style="width: 16px; height: 16px;"></div>
+                                                                <span>Salaires</span>
+                                                            </div>
+                                                            <div class="btn-group btn-group-sm">
+                                                                <button class="btn btn-outline-secondary">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bg-danger rounded me-2" style="width: 16px; height: 16px;"></div>
+                                                                <span>Investissements</span>
+                                                            </div>
+                                                            <div class="btn-group btn-group-sm">
+                                                                <button class="btn btn-outline-secondary">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Security Tab -->
+                                <div class="tab-pane fade" id="security-tab">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-header bg-white border-0">
+                                            <h5 class="card-title mb-0">
+                                                <i class="fas fa-shield-alt me-2"></i>
+                                                Paramètres de Sécurité
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center p-3 border rounded">
+                                                        <div>
+                                                            <h6 class="mb-1">Authentification à deux facteurs (2FA)</h6>
+                                                            <small class="text-muted">Ajouter une couche de sécurité supplémentaire</small>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox" id="enable2FA">
+                                                            <label class="form-check-label" for="enable2FA"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center p-3 border rounded">
+                                                        <div>
+                                                            <h6 class="mb-1">Sauvegarde automatique</h6>
+                                                            <small class="text-muted">Sauvegarde quotidienne des données</small>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox" id="autoBackup" checked>
+                                                            <label class="form-check-label" for="autoBackup"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="p-3 border rounded">
+                                                        <h6 class="mb-3">Changer le mot de passe</h6>
+                                                        <div class="row g-3">
+                                                            <div class="col-md-4">
+                                                                <input type="password" class="form-control" placeholder="Mot de passe actuel">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <input type="password" class="form-control" placeholder="Nouveau mot de passe">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <input type="password" class="form-control" placeholder="Confirmer le mot de passe">
+                                                            </div>
+                                                        </div>
+                                                        <button class="btn btn-primary mt-3">
+                                                            <i class="fas fa-save me-2"></i>
+                                                            Mettre à jour
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Preferences Tab -->
+                                <div class="tab-pane fade" id="preferences-tab">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-header bg-white border-0">
+                                            <h5 class="card-title mb-0">
+                                                <i class="fas fa-palette me-2"></i>
+                                                Préférences d'Interface
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row g-4">
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-semibold">Langue</label>
+                                                    <select class="form-select">
+                                                        <option selected>Français</option>
+                                                        <option>English</option>
+                                                        <option>Español</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-semibold">Devise par défaut</label>
+                                                    <select class="form-select">
+                                                        <option selected>EUR (€)</option>
+                                                        <option>USD ($)</option>
+                                                        <option>GBP (£)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-semibold">Format de date</label>
+                                                    <select class="form-select">
+                                                        <option selected>DD/MM/YYYY</option>
+                                                        <option>MM/DD/YYYY</option>
+                                                        <option>YYYY-MM-DD</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-semibold">Fuseau horaire</label>
+                                                    <select class="form-select">
+                                                        <option selected>Europe/Paris (CET)</option>
+                                                        <option>UTC</option>
+                                                        <option>America/New_York (EST)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <h6 class="fw-semibold mb-3">Widgets du tableau de bord</h6>
+                                                    <div class="row g-2">
+                                                        <div class="col-md-6">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="widget1" checked>
+                                                                <label class="form-check-label" for="widget1">
+                                                                    Trésorerie totale
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="widget2" checked>
+                                                                <label class="form-check-label" for="widget2">
+                                                                    Chiffre d'affaires
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="widget3" checked>
+                                                                <label class="form-check-label" for="widget3">
+                                                                    Alertes critiques
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="widget4">
+                                                                <label class="form-check-label" for="widget4">
+                                                                    Graphique des prévisions
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Backup Tab -->
+                                <div class="tab-pane fade" id="backup-tab">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-header bg-white border-0">
+                                            <h5 class="card-title mb-0">
+                                                <i class="fas fa-cloud me-2"></i>
+                                                Sauvegarde et Restauration
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <div class="alert alert-info">
+                                                        <i class="fas fa-info-circle me-2"></i>
+                                                        Dernière sauvegarde effectuée le 15/12/2024 à 14:30
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card border">
+                                                        <div class="card-body text-center">
+                                                            <i class="fas fa-download fa-2x text-primary mb-3"></i>
+                                                            <h6 class="fw-semibold mb-2">Créer une sauvegarde</h6>
+                                                            <p class="text-muted small mb-3">Exporter toutes les données de l'application</p>
+                                                            <button class="btn btn-primary">
+                                                                <i class="fas fa-download me-2"></i>
+                                                                Télécharger
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card border">
+                                                        <div class="card-body text-center">
+                                                            <i class="fas fa-upload fa-2x text-success mb-3"></i>
+                                                            <h6 class="fw-semibold mb-2">Restaurer une sauvegarde</h6>
+                                                            <p class="text-muted small mb-3">Importer des données depuis un fichier</p>
+                                                            <button class="btn btn-success">
+                                                                <i class="fas fa-upload me-2"></i>
+                                                                Importer
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <h6 class="fw-semibold mb-3">Historique des sauvegardes</h6>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-sm">
+                                                            <thead class="table-light">
+                                                                <tr>
+                                                                    <th>Date</th>
+                                                                    <th>Type</th>
+                                                                    <th>Taille</th>
+                                                                    <th>Statut</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>15/12/2024 14:30</td>
+                                                                    <td>Automatique</td>
+                                                                    <td>15.2 MB</td>
+                                                                    <td>
+                                                                        <span class="badge bg-success">Réussie</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button class="btn btn-outline-secondary btn-sm">
+                                                                            <i class="fas fa-download"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>14/12/2024 14:30</td>
+                                                                    <td>Manuelle</td>
+                                                                    <td>14.8 MB</td>
+                                                                    <td>
+                                                                        <span class="badge bg-success">Réussie</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button class="btn btn-outline-secondary btn-sm">
+                                                                            <i class="fas fa-download"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+    {% endblock content %}

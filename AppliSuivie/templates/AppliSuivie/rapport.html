@@ -1,0 +1,338 @@
+{% extends "base.html" %}
+    {% block title %}Rapports - FinanceManager{% endblock title %}
+{% block content %}
+
+                <!-- Header -->
+                <div class="page-header">
+                    <div class="container-fluid px-4">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h1 class="h2 mb-1">
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    Rapports
+                                </h1>
+                                <p class="text-white-50 mb-0">Génération et consultation des rapports financiers</p>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-success me-2">
+                                    <i class="fas fa-plus me-2"></i>
+                                    Générer Rapport
+                                </button>
+                                <button class="btn btn-outline-light">
+                                    <i class="fas fa-calendar me-2"></i>
+                                    Planifier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Content -->
+                <div class="container-fluid px-4">
+                    <!-- Quick Report Generation -->
+                    <div class="card mb-4 border-0 shadow">
+                        <div class="card-header bg-white border-0">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-plus me-2"></i>
+                                Génération Rapide
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card report-card border-primary text-primary bg-primary bg-opacity-10">
+                                        <div class="card-body text-center p-4">
+                                            <i class="fas fa-chart-bar fa-2x mb-3"></i>
+                                            <h6 class="fw-semibold mb-2">Bilan Comptable</h6>
+                                            <p class="small text-muted mb-3">État de la situation financière</p>
+                                            <button class="btn btn-primary btn-sm w-100">
+                                                Générer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card report-card border-success text-success bg-success bg-opacity-10">
+                                        <div class="card-body text-center p-4">
+                                            <i class="fas fa-chart-line fa-2x mb-3"></i>
+                                            <h6 class="fw-semibold mb-2">Compte de Résultat</h6>
+                                            <p class="small text-muted mb-3">Performance financière</p>
+                                            <button class="btn btn-success btn-sm w-100">
+                                                Générer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card report-card border-secondary text-secondary bg-secondary bg-opacity-10">
+                                        <div class="card-body text-center p-4">
+                                            <i class="fas fa-dollar-sign fa-2x mb-3"></i>
+                                            <h6 class="fw-semibold mb-2">Flux de Trésorerie</h6>
+                                            <p class="small text-muted mb-3">Mouvements de liquidités</p>
+                                            <button class="btn btn-secondary btn-sm w-100">
+                                                Générer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card report-card border-warning text-warning bg-warning bg-opacity-10">
+                                        <div class="card-body text-center p-4">
+                                            <i class="fas fa-chart-pie fa-2x mb-3"></i>
+                                            <h6 class="fw-semibold mb-2">Analyse Financière</h6>
+                                            <p class="small text-muted mb-3">Ratios et indicateurs</p>
+                                            <button class="btn btn-warning btn-sm w-100">
+                                                Générer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generated Reports -->
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-white border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    Rapports Générés
+                                </h5>
+                                <div class="d-flex gap-2">
+                                    <select class="form-select" style="width: 200px;">
+                                        <option>Tous les rapports</option>
+                                        <option>Bilans</option>
+                                        <option>Comptes de résultat</option>
+                                        <option>Flux de trésorerie</option>
+                                        <option>Analyses</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary">
+                                        <i class="fas fa-filter"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Rapport</th>
+                                            <th>Type</th>
+                                            <th>Période</th>
+                                            <th>Généré le</th>
+                                            <th>Format</th>
+                                            <th>Taille</th>
+                                            <th>Statut</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-file-pdf text-danger fa-lg me-3"></i>
+                                                    <div>
+                                                        <div class="fw-semibold">Bilan Comptable Q4 2024</div>
+                                                        <small class="text-muted">Rapport trimestriel complet</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-primary">Bilan</span>
+                                            </td>
+                                            <td>Oct - Déc 2024</td>
+                                            <td>15/12/2024 14:30</td>
+                                            <td>
+                                                <span class="badge bg-danger">PDF</span>
+                                            </td>
+                                            <td>2.4 MB</td>
+                                            <td>
+                                                <span class="badge bg-success">Disponible</span>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-success">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-share"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-file-excel text-success fa-lg me-3"></i>
+                                                    <div>
+                                                        <div class="fw-semibold">Flux de Trésorerie Mensuel</div>
+                                                        <small class="text-muted">Détail des mouvements</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-success">Flux</span>
+                                            </td>
+                                            <td>Novembre 2024</td>
+                                            <td>12/12/2024 09:15</td>
+                                            <td>
+                                                <span class="badge bg-success">Excel</span>
+                                            </td>
+                                            <td>1.8 MB</td>
+                                            <td>
+                                                <span class="badge bg-success">Disponible</span>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-success">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-share"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-file-csv text-primary fa-lg me-3"></i>
+                                                    <div>
+                                                        <div class="fw-semibold">Analyse Financière Annuelle</div>
+                                                        <small class="text-muted">Ratios et indicateurs détaillés</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-warning">Analyse</span>
+                                            </td>
+                                            <td>Année 2024</td>
+                                            <td>10/12/2024 16:45</td>
+                                            <td>
+                                                <span class="badge bg-primary">CSV</span>
+                                            </td>
+                                            <td>856 KB</td>
+                                            <td>
+                                                <span class="badge bg-success">Disponible</span>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-success">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-share"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-file-pdf text-danger fa-lg me-3"></i>
+                                                    <div>
+                                                        <div class="fw-semibold">Compte de Résultat Q3 2024</div>
+                                                        <small class="text-muted">Performance trimestrielle</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-secondary">Résultat</span>
+                                            </td>
+                                            <td>Jul - Sep 2024</td>
+                                            <td>05/12/2024 11:20</td>
+                                            <td>
+                                                <span class="badge bg-danger">PDF</span>
+                                            </td>
+                                            <td>1.9 MB</td>
+                                            <td>
+                                                <span class="badge bg-success">Disponible</span>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-success">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-share"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-file-excel text-success fa-lg me-3"></i>
+                                                    <div>
+                                                        <div class="fw-semibold">Budget Prévisionnel 2025</div>
+                                                        <small class="text-muted">Projections et objectifs</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-info">Budget</span>
+                                            </td>
+                                            <td>Année 2025</td>
+                                            <td>01/12/2024 13:00</td>
+                                            <td>
+                                                <span class="badge bg-success">Excel</span>
+                                            </td>
+                                            <td>3.2 MB</td>
+                                            <td>
+                                                <span class="badge bg-warning">En cours</span>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-success" disabled>
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary">
+                                                        <i class="fas fa-share"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <nav>
+                                <ul class="pagination justify-content-center mb-0">
+                                    <li class="page-item disabled">
+                                        <span class="page-link">Précédent</span>
+                                    </li>
+                                    <li class="page-item active">
+                                        <span class="page-link">1</span>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Suivant</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+    {% endblock content%}

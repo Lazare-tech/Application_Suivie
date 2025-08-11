@@ -1,7 +1,309 @@
 {% extends "base.html" %}
-{% block title %}welcome to homepage{% endblock title %}
+    
+{% block title %}Tableau de Bord - FinanceManager{% endblock title %}
+   
 {% block content %}
 
-<h1>hello wordl</h1>
+<!-- Header -->
+<div class="page-header">
+    <div class="container-fluid px-4">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1 class="h2 mb-1">
+                    <i class="fas fa-chart-bar me-2"></i>
+                    Tableau de Bord
+                </h1>
+                <p class="text-white-50 mb-0">Vue d'ensemble de votre situation financière</p>
+            </div>
+            <div class="col-auto">
+                <select class="form-select form-select-sm bg-white bg-opacity-10 border-white border-opacity-20 text-white me-2" style="width: auto; display: inline-block;">
+                    <option>30 derniers jours</option>
+                    <option>7 derniers jours</option>
+                    <option>90 derniers jours</option>
+                    <option>1 an</option>
+                </select>
+                <button class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard Content -->
+<div class="container-fluid px-4">
+    <!-- Key Metrics -->
+    <div class="row mb-4">
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">Trésorerie Totale</p>
+                            <h3 class="text-success fw-bold mb-1">€ 635,750</h3>
+                            <div class="d-flex align-items-center text-success small">
+                                <i class="fas fa-arrow-up me-1"></i>
+                                +12.5%
+                            </div>
+                        </div>
+                        <div class="bg-success bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-wallet text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">Chiffre d'Affaires</p>
+                            <h3 class="text-primary fw-bold mb-1">€ 1,245,000</h3>
+                            <div class="d-flex align-items-center text-success small">
+                                <i class="fas fa-arrow-up me-1"></i>
+                                +8.3%
+                            </div>
+                        </div>
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-chart-line text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">Résultat Net</p>
+                            <h3 class="text-success fw-bold mb-1">€ 185,250</h3>
+                            <div class="d-flex align-items-center text-success small">
+                                <i class="fas fa-arrow-up me-1"></i>
+                                +15.2%
+                            </div>
+                        </div>
+                        <div class="bg-success bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-chart-pie text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">Ratio de Liquidité</p>
+                            <h3 class="text-warning fw-bold mb-1">1.8</h3>
+                            <div class="d-flex align-items-center text-danger small">
+                                <i class="fas fa-arrow-down me-1"></i>
+                                -5.2%
+                            </div>
+                        </div>
+                        <div class="bg-warning bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-tint text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROE -->
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">ROE</p>
+                            <h3 class="text-info fw-bold mb-1">14.2%</h3>
+                            <div class="d-flex align-items-center text-success small">
+                                <i class="fas fa-arrow-up me-1"></i>
+                                +1.5 pts
+                            </div>
+                        </div>
+                        <div class="bg-info bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-percentage text-info"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marge Brute -->
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">Marge Brute</p>
+                            <h3 class="text-primary fw-bold mb-1">62.5%</h3>
+                            <div class="d-flex align-items-center text-success small">
+                                <i class="fas fa-arrow-up me-1"></i>
+                                +2.1 pts
+                            </div>
+                        </div>
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-balance-scale text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flux de trésorerie opérationnel -->
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card stat-card border-0 shadow">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                            <p class="text-muted small mb-2">Flux de Trésorerie Opérationnel</p>
+                            <h3 class="text-success fw-bold mb-1">€ 425,000</h3>
+                            <div class="d-flex align-items-center text-success small">
+                                <i class="fas fa-arrow-up me-1"></i>
+                                +9.8%
+                            </div>
+                        </div>
+                        <div class="bg-success bg-opacity-10 rounded-circle p-3">
+                            <i class="fas fa-money-bill-wave text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row mb-4">
+        <div class="col-lg-8 mb-3">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-line me-2"></i>
+                        Évolution de la Trésorerie
+                    </h5>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-secondary">7J</button>
+                        <button class="btn btn-primary">30J</button>
+                        <button class="btn btn-outline-secondary">90J</button>
+                        <button class="btn btn-outline-secondary">1A</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas id="treasuryChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-3">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-white border-0">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-pie me-2"></i>
+                        Répartition des Dépenses
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="expenseChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerts and Transactions Row -->
+    <div class="row">
+        <div class="col-lg-6 mb-3">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-exclamation-triangle text-danger me-2"></i>
+                        Alertes Critiques
+                    </h5>
+                    <button class="btn btn-outline-secondary btn-sm">Voir tout</button>
+                </div>
+                <div class="card-body">
+                    <div class="alert-item alert-critical p-3 mb-3">
+                        <h6 class="fw-semibold mb-1">Solde critique - Compte Principal</h6>
+                        <p class="text-muted small mb-2">Le solde est descendu sous le seuil critique de 50,000€</p>
+                        <small class="text-muted">Il y a 2h</small>
+                    </div>
+                    <div class="alert-item alert-warning p-3 mb-3">
+                        <h6 class="fw-semibold mb-1">Paiement en retard</h6>
+                        <p class="text-muted small mb-2">Facture #FAC-2024-0156 en retard de 15 jours</p>
+                        <small class="text-muted">Il y a 1j</small>
+                    </div>
+                    <div class="alert-item alert-warning p-3">
+                        <h6 class="fw-semibold mb-1">Risque de découvert</h6>
+                        <p class="text-muted small mb-2">Risque de découvert prévu dans 5 jours</p>
+                        <small class="text-muted">Il y a 3h</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-3">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-exchange-alt me-2"></i>
+                        Transactions Récentes
+                    </h5>
+                    <button class="btn btn-outline-secondary btn-sm">Voir tout</button>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                        <div>
+                            <h6 class="fw-semibold small mb-0">Virement client ABC Corp</h6>
+                            <small class="text-muted">15/12/2024</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="text-success fw-bold">+€ 25,000</span>
+                            <br>
+                            <span class="badge bg-success small">Validé</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                        <div>
+                            <h6 class="fw-semibold small mb-0">Salaires équipe technique</h6>
+                            <small class="text-muted">14/12/2024</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="text-danger fw-bold">-€ 45,600</span>
+                            <br>
+                            <span class="badge bg-success small">Validé</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                        <div>
+                            <h6 class="fw-semibold small mb-0">Facture électricité EDF</h6>
+                            <small class="text-muted">13/12/2024</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="text-danger fw-bold">-€ 3,250</span>
+                            <br>
+                            <span class="badge bg-warning small">En attente</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center py-2">
+                        <div>
+                            <h6 class="fw-semibold small mb-0">Remboursement prêt équipement</h6>
+                            <small class="text-muted">12/12/2024</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="text-danger fw-bold">-€ 8,900</span>
+                            <br>
+                            <span class="badge bg-success small">Validé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
