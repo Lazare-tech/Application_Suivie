@@ -26,6 +26,52 @@
                         </div>
                     </div>
                 </div>
+                <!-- Filtres de génération -->
+<div class="container-fluid px-4">
+<div class="card mb-4 border-0 shadow">
+    <div class="card-header bg-white border-0">
+        <h5 class="card-title mb-0">
+            <i class="fas fa-filter me-2"></i>
+            Filtrer les Rapports
+        </h5>
+    </div>
+    <div class="card-body">
+        <form class="row g-3 align-items-end">
+            <!-- Date Début -->
+            <div class="col-md-3">
+                <label for="date_debut" class="form-label">Date Début</label>
+                <input type="date" class="form-control" id="date_debut" name="date_debut">
+            </div>
+
+            <!-- Date Fin -->
+            <div class="col-md-3">
+                <label for="date_fin" class="form-label">Date Fin</label>
+                <input type="date" class="form-control" id="date_fin" name="date_fin">
+            </div>
+
+            <!-- Type de période -->
+            <div class="col-md-3">
+                <label for="periode_type" class="form-label">Type de période</label>
+                <select id="periode_type" name="periode_type" class="form-select">
+                    <option value="">-- Choisir --</option>
+                    <option value="mois">Mois</option>
+                    <option value="trimestre">Trimestre</option>
+                    <option value="semestre">Semestre</option>
+                    <option value="annee">Année</option>
+                </select>
+            </div>
+
+            <!-- Bouton Générer -->
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-play me-2"></i> Générer
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
 
                 <!-- Reports Content -->
                 <div class="container-fluid px-4">
@@ -66,7 +112,8 @@
                                 <div class="col-md-6 col-lg-3">
                                     <div class="card report-card border-secondary text-secondary bg-secondary bg-opacity-10">
                                         <div class="card-body text-center p-4">
-                                            <i class="fas fa-dollar-sign fa-2x mb-3"></i>
+                                            <i class="fas fa-coins fa-2x mb-1"></i>
+                                            <div class="small text-muted">FCFA</div>
                                             <h6 class="fw-semibold mb-2">Flux de Trésorerie</h6>
                                             <p class="small text-muted mb-3">Mouvements de liquidités</p>
                                             <button class="btn btn-secondary btn-sm w-100">
@@ -75,6 +122,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="col-md-6 col-lg-3">
                                     <div class="card report-card border-warning text-warning bg-warning bg-opacity-10">
                                         <div class="card-body text-center p-4">
@@ -123,7 +171,6 @@
                                             <th>Période</th>
                                             <th>Généré le</th>
                                             <th>Format</th>
-                                            <th>Taille</th>
                                             <th>Statut</th>
                                             <th>Actions</th>
                                         </tr>
@@ -145,9 +192,18 @@
                                             <td>Oct - Déc 2024</td>
                                             <td>15/12/2024 14:30</td>
                                             <td>
-                                                <span class="badge bg-danger">PDF</span>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        PDF
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">PDF</a></li>
+                                                        <li><a class="dropdown-item" href="#">Excel</a></li>
+                                                        <li><a class="dropdown-item" href="#">Word</a></li>
+                                                    </ul>
+                                                </div>
                                             </td>
-                                            <td>2.4 MB</td>
+                                            
                                             <td>
                                                 <span class="badge bg-success">Disponible</span>
                                             </td>
@@ -180,10 +236,20 @@
                                             </td>
                                             <td>Novembre 2024</td>
                                             <td>12/12/2024 09:15</td>
+                                          
                                             <td>
-                                                <span class="badge bg-success">Excel</span>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        Excel
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">PDF</a></li>
+                                                        <li><a class="dropdown-item" href="#">Excel</a></li>
+                                                        <li><a class="dropdown-item" href="#">Word</a></li>
+                                                    </ul>
+                                                </div>
                                             </td>
-                                            <td>1.8 MB</td>
+                                            
                                             <td>
                                                 <span class="badge bg-success">Disponible</span>
                                             </td>
@@ -216,10 +282,20 @@
                                             </td>
                                             <td>Année 2024</td>
                                             <td>10/12/2024 16:45</td>
+                                           
                                             <td>
-                                                <span class="badge bg-primary">CSV</span>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        CSV
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">PDF</a></li>
+                                                        <li><a class="dropdown-item" href="#">Excel</a></li>
+                                                        <li><a class="dropdown-item" href="#">Word</a></li>
+                                                    </ul>
+                                                </div>
                                             </td>
-                                            <td>856 KB</td>
+                                            
                                             <td>
                                                 <span class="badge bg-success">Disponible</span>
                                             </td>
@@ -253,9 +329,17 @@
                                             <td>Jul - Sep 2024</td>
                                             <td>05/12/2024 11:20</td>
                                             <td>
-                                                <span class="badge bg-danger">PDF</span>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        PDF
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">PDF</a></li>
+                                                        <li><a class="dropdown-item" href="#">Excel</a></li>
+                                                        <li><a class="dropdown-item" href="#">Word</a></li>
+                                                    </ul>
+                                                </div>
                                             </td>
-                                            <td>1.9 MB</td>
                                             <td>
                                                 <span class="badge bg-success">Disponible</span>
                                             </td>
@@ -273,42 +357,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fas fa-file-excel text-success fa-lg me-3"></i>
-                                                    <div>
-                                                        <div class="fw-semibold">Budget Prévisionnel 2025</div>
-                                                        <small class="text-muted">Projections et objectifs</small>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-info">Budget</span>
-                                            </td>
-                                            <td>Année 2025</td>
-                                            <td>01/12/2024 13:00</td>
-                                            <td>
-                                                <span class="badge bg-success">Excel</span>
-                                            </td>
-                                            <td>3.2 MB</td>
-                                            <td>
-                                                <span class="badge bg-warning">En cours</span>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group btn-group-sm">
-                                                    <button class="btn btn-outline-success" disabled>
-                                                        <i class="fas fa-download"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-secondary">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-secondary">
-                                                        <i class="fas fa-share"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                       
                                     </tbody>
                                 </table>
                             </div>

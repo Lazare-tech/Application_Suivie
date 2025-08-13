@@ -39,10 +39,10 @@
    new Chart(expenseCtx, {
        type: 'doughnut',
        data: {
-           labels: ['Salaires', 'Charges fixes', 'Marketing', 'R&D', 'Autres'],
+           labels: ['Salaires', 'Achats/Approvisionnement', 'Charges de personnel', 'Impots/taxes', 'Frais financiers','Frais transport/deplacement','Frais generaux','Assurance'],
            datasets: [{
-               data: [45, 25, 15, 10, 5],
-               backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#6f42c1']
+               data: [35, 15, 11, 37, 5,10,20,10],
+               backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#6f42c1','#7226FF','#6700A3','#00033D']
            }]
        },
        options: {
