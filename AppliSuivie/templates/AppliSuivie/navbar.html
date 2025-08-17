@@ -3,18 +3,20 @@
 <div class="p-3">
     <h4 class="text-white mb-4">
         <i class="fas fa-wallet me-2"></i>
-        FinanceManager Pro
+        Appli_Suivie
     </h4>
+    <div class="mb-4 text-white ms-3">
+        <i class="fas fa-user-circle me-1 fa-2x"></i>
+        {{ request.user.username }}
+    </div>
     <nav class="nav flex-column">
-        <a class="nav-link active" href="{% url 'AppliSuivie:homepage' %}">
+        <a class="nav-link active" href="{% url 'AppliSuivie:dashboard' %}">
             <i class="fas fa-chart-bar me-2"></i> Tableau de bord
         </a>
         <a class="nav-link" href="{% url 'AppliSuivie:transaction'%}">
             <i class="fas fa-exchange-alt me-2"></i> Transactions
         </a>
-        <a class="nav-link" href="{% url 'AppliSuivie:previsions' %}">
-            <i class="fas fa-chart-line me-2"></i> Prévisions
-        </a>
+      
         <a class="nav-link" href="{% url 'AppliSuivie:rapport' %}">
             <i class="fas fa-file-alt me-2"></i> Rapports
         </a>
@@ -24,6 +26,9 @@
         </a>
         <a class="nav-link" href="{% url 'AppliSuivie:parametres' %}">
             <i class="fas fa-cog me-2"></i> Paramètres
+        </a>
+        <a class="btn btn-danger" href="{% url 'AppliSuivie:logout' %}">
+            Deconnexion
         </a>
     </nav>
 </div>

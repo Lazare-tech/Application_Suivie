@@ -7,7 +7,10 @@ import AppliSuivie.views
 app_name = "AppliSuivie"
 #
 urlpatterns = [
-    path('',AppliSuivie.views.home, name='homepage'),
+    # LOGIN 
+     path('',AppliSuivie.views.login_page,name='login'),
+    path('logout/',AppliSuivie.views.logout_user,name='logout'),
+    path('dashboard',AppliSuivie.views.home, name='dashboard'),
     path('alerts/',AppliSuivie.views.alerts,name='alert'),
     path('transactions/',AppliSuivie.views.transactions,name='transaction'),
         path('parametres/',AppliSuivie.views.settings,name='parametres'),
